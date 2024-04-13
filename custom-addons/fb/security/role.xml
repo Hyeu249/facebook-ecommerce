@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="module_fb_ecommerce" model="ir.module.category">
+        <field name="name">Facebook ecommerce</field>
+        <field name="description">Facebook ecommerce from company</field>
+    </record>
+
+    <record id="group_fb_admin" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="module_fb_ecommerce"/>
+    </record>
+
+    <record id="group_fb_staff" model="res.groups">
+        <field name="name">Staff</field>
+        <field name="category_id" ref="module_fb_ecommerce"/>
+    </record>
+
+</odoo>

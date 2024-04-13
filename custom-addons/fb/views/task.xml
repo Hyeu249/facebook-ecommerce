@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_fb_task_form" model="ir.ui.view">
+        <field name="name">fb.task.form</field>
+        <field name="model">fb.task</field>
+        <field name="arch" type="xml">
+            <form>  
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
+
+                    <group string="Metadata">
+                        <field name="company_id" readonly="1"/>
+                    </group>
+
+                    <group string="Model">
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_fb_task_tree" model="ir.ui.view">
+        <field name="name">fb.task.tree</field>
+        <field name="model">fb.task</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_fb_task_search" model="ir.ui.view">
+        <field name="name">fb.task.search</field>
+        <field name="model">fb.task</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_fb_task" model="ir.actions.act_window">
+        <field name="name">Task</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fb.task</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_fb_task"
+            name="Task" 
+            parent="menu_fb_operations"
+            action="action_fb_task"
+            sequence="10"/>
+
+</odoo>

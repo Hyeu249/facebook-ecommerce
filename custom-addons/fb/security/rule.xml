@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.rule" id="fb_task_multi_company_rule">
+        <field name="name">FB task Multi Company Rule</field>
+        <field name="model_id" ref="model_fb_task"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'child_of', company_ids)]</field>
+    </record>
+
+</odoo>
